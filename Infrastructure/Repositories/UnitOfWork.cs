@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore.Storage;
 namespace Infrastructure.Repositories;
 public class UnitOfWork : IUnitOfWork
 {
-    private readonly ApplicationContext _context;
+    private readonly ApplicationPGSqlDbContext _context;
     public IRepository<Product> Products { get; private set; }
 
-    public UnitOfWork(ApplicationContext context)
+    public UnitOfWork(ApplicationPGSqlDbContext context)
     {
         _context = context;
         Products = new Repository<Product>(_context);

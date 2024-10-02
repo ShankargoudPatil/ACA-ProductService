@@ -1,14 +1,12 @@
-﻿
-using System.Linq.Expressions;
+﻿using System.Linq.Expressions;
 using Domain.Persistence;
 using Microsoft.EntityFrameworkCore;
-
 namespace Infrastructure.Repositories;
 public class Repository<T> : IRepository<T> where T : class
 {
-    protected  ApplicationContext _context;
+    protected  ApplicationPGSqlDbContext _context;
     private readonly DbSet<T> _dbSet;
-    public Repository(ApplicationContext context)
+    public Repository(ApplicationPGSqlDbContext context)
     {
         _context = context;
         _dbSet = _context.Set<T>();

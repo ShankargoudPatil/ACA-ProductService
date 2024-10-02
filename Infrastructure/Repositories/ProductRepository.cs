@@ -1,13 +1,12 @@
 ﻿using Domain.Entities;
 using Domain.Persistence;
 using Microsoft.EntityFrameworkCore;
-
 namespace Infrastructure.Repositories;
 
 public class ProductRepository : Repository<Product>, IProductRepository
 {
     private readonly DbSet<Product> _dbSet;
-    public ProductRepository(ApplicationContext context) : base(context)
+    public ProductRepository(ApplicationPGSqlDbContext context) : base(context)
     {
         _dbSet = context.Set<Product>();
     }
@@ -23,6 +22,7 @@ public class ProductRepository : Repository<Product>, IProductRepository
 
     public async Task<IEnumerable<Product>> GetProductsAsync(CancellationToken cancellationToken)
     {
-        return await _dbSet.ToListAsync(cancellationToken);
+        var res= await _dbSet.ToListAsync(cancellationToken);
+        return res;
     }
 }

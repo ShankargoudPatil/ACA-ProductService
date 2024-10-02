@@ -14,3 +14,4 @@ public  class Product:BaseClass
     public Category? Category { get; set; }
     public Manufacturer? Manufacturer { get; set; }
 }
+

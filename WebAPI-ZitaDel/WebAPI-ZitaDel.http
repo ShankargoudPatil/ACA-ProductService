@@ -1,0 +1,6 @@
+@WebAPI_ZitaDel_HostAddress = http://localhost:5052
+
+GET {{WebAPI_ZitaDel_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
