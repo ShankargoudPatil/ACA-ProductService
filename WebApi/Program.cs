@@ -71,7 +71,7 @@ builder.Services.AddAuthentication(options =>
     // Configure OAuth2 introspection for opaque tokens
     options.Authority = "https://connect-idp-service-bmr36j.us1.zitadel.cloud";
     options.ClientId = "12862131573687561031";
-    options.ClientSecret = "hd2kezw4DIPBZGcuExS7SuZ4ituymiNTXckAbq2ojsB6qBlhQxvgt8jsUernyf301";
+    options.ClientSecret = "";
     options.IntrospectionEndpoint = "https://connect-idp-service-bmr36j.us1.zitadel.cloud/oauth/v2/introspect";
     options.RoleClaimType = ClaimTypes.Role;// Handle roles in opaque tokens
 })
